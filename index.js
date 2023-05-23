@@ -3,7 +3,7 @@ let app = express();
 
 
 app.get('/', function (req, res) {
-    res.send("HI , It's Node js App #1");
+    res.send("HI , It's Node js App");
 });
 
 app.listen(3000, function () {
