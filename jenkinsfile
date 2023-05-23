@@ -12,7 +12,7 @@ pipeline{
         stage("push docker image to repo"){
             steps{
                 script{
-                        withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        withCredentials([usernamePassword(credentialsId: 'docker-hub-sasas', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                             sh "docker build -t mar97/session-node-app:latest ."
                             sh "echo $PASSWORD | docker login -u $USERNAME  --password-stdin"
                             sh "docker push  mar97/session-node-app:latest"
